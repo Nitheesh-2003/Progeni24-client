@@ -3,15 +3,13 @@ import Auth from "@pages/Auth";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {
-  About,
   Events,
   Tech,
-  Works,
-  Feedbacks,
   Contact,
   Navbar,
   StarsCanvas,
-  College
+  College,
+  RegisterPage2
 } from "@components";
 import { useState,useEffect } from "react";
 
@@ -59,7 +57,10 @@ function App() {
               path="/auth"
               element={user ? <Navigate to="../home" /> : <Auth />}
             />
-            {/* <Route path='/profile/:id' element={user ? <ProfilePage /> : <Navigate to='../auth' />}/> */}
+            <Route
+              path="/register2"
+              element={user ? <div className="relative bg-primary min-h-[100vh]"><RegisterPage2 /></div> : <Navigate to="../auth" />}
+            />
           </Routes>
         </div>
     </>

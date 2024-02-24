@@ -4,6 +4,7 @@ import { fadeIn, textVariant } from "@utils/motion";
 import { SectionWrapper } from "@hoc";
 import { SiSitepoint } from "react-icons/si";
 import { Alert } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
   return (
@@ -40,9 +41,11 @@ const RegisterForm = () => {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center gap-16">
-        <button className="button px-8 py-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider mt-10">
-          Register Now
-        </button>
+        <Link to="/register2">
+          <button className="button px-8 py-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider mt-10">
+            Register Now
+          </button>
+        </Link>
         <Alert
           severity="warning"
           className="w-full"

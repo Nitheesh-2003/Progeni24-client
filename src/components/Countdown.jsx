@@ -1,49 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import Countdown from "react-countdown";
 
-const Countdown = () => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+const CountDown = () => {
+  const end = new Date(2024,2,11);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+  const Completionist = () => (
+    <div className="text-center sm:m-0 mb-16">Registration closed!</div>
+  );
 
-    return () => clearInterval(timer); 
-  }, []);
-
-  function calculateTimeLeft() {
-    const deadline = moment('2024-03-11T00:00:00Z');
-    const now = moment();
-    const diff = deadline.diff(now);
-    const duration = moment.duration(diff);
-    const days = Math.floor(duration.asDays());
-    const hours = duration.hours();
-    const minutes = duration.minutes();
-    const seconds = duration.seconds();
-
-    return {
-      days,
-      hours,
-      minutes,
-      seconds,
-    };
-  }
-
-  function formatTimeLeft() {
-    const { days, hours, minutes, seconds } = timeLeft;
-    return `${days} , ${hours}, ${minutes}, ${seconds}`;
-  }
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return <Completionist />;
+    } else {
+      return (
+        <div className="flex  gap-4 justify-center items-center mb-16">
+          <div className="relative timer_box bg-transparent border-4 border-[#5100ff] w-fit rounded-lg sm:p-3 p-2 sm:px-5 px-3 text-center">
+            {days}
+            <span className="block text-xs">Days</span>
+          </div>
+          <div className="relative timer_box bg-transparent border-4 border-[#5100ff] w-fit rounded-lg sm:p-3 p-2 text-center">
+            {hours}
+            <span className="block text-xs">Hours</span>
+          </div>
+          <div className="relative timer_box bg-transparent border-4 border-[#5100ff] w-fit rounded-lg sm:p-3 p-2 text-center">
+            {minutes}
+            <span className="block text-xs">Minutes</span>
+          </div>
+          <div className="relative timer_box bg-transparent border-4 border-[#5100ff] w-fit rounded-lg sm:p-3 p-2 text-center">
+            {seconds}
+            <span className="block text-xs">Seconds</span>
+          </div>
+        </div>
+      );
+    }
+  };
 
   return (
-    <div className="text-center mt-4">
-      {timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0 ? (
-        <h2 className="text-xl font-bold text-gray-800">Registration closes in: {formatTimeLeft()}</h2>
-      ) : (
-        <h2 className="text-xl font-bold text-red-500">Registration Closed</h2>
-      )}
+    <div className="relative z-10 mt-10 mb-[-40px] text-xl font-semibold">
+      <div className="count-down">
+        <Countdown date={end.getTime()} renderer={renderer}>
+          <Completionist />
+        </Countdown>
+      </div>
     </div>
   );
 };
 
-export default Countdown;
+export default CountDown;

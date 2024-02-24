@@ -5,7 +5,7 @@ import { styles } from '../styles';
 import {services} from '@constants';
 import {fadeIn,textVariant} from '@utils/motion'
 import {SectionWrapper} from '@hoc'
-import resume from '@assets/resume.pdf';
+import playbook from '@assets/playbook.pdf';
 
 const ServiceCard=({index,title,icon})=>{
   return (
@@ -34,7 +34,7 @@ const About = () => {
   return (
     <>
       <motion.div 
-        variants={textVariant()} className='sm:mt-0 mt-10'
+        variants={textVariant()} className='sm:mt-0 mt-28'
       >
         <p className={styles.sectionSubText}>Overview.</p>
         <h2 className={styles.sectionHeadText}>Progen'i <span className='progeni'>24</span></h2>
@@ -45,7 +45,7 @@ const About = () => {
       >
         Progen'i, our name embodies the essence of pro-generation, where together, we construct the world of tomorrow using just ones and zeros. With a vision to enrich the annals of Progeni, we proudly unveil our latest endeavor: the creation of Progeni24.0 server. We extend a warm invitation to all students to showcase their skills, execute test cases, and seize the opportunity to claim the coveted cash prize. Let's embark on this journey of innovation and collaboration!
       </motion.p>
-      <a href={resume} download="Nitheesh_Resume"><button className='button px-7 py-3 mt-6 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider'>Download Playbook</button></a>
+      <a href={playbook} download="Playbook"><button className='button px-7 py-3 mt-6 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider'>Download Playbook</button></a>
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service,index)=>(
           <ServiceCard key={service.title} index={index} {...service}/>

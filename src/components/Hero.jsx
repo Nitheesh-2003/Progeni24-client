@@ -8,7 +8,7 @@ import Countdown from './Countdown';
 const Hero = () => {
   const {user}=useSelector((state=>state.authReducer.authData));
   return (
-    <section className="relative w-full h-screen mx-auto" id="home">
+    <section className="relative w-full md:h-screen h-[110vh] mx-auto" id="home">
       <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 text-center`}>
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>GOVERNMENT COLLEGE OF ENGINEERING , SALEM-11</h1>
@@ -25,7 +25,12 @@ const Hero = () => {
             }}
           />
           </div>
-          <div className='button px-7 w-fit py-3 m-auto sm:mt-20 mt-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider'><a href='/home/tech'>Register Now</a></div>
+          <div>
+            <Countdown />
+          </div>
+          <div>
+          <a href='/home/register' className='button px-7 w-fit py-3 m-auto sm:mt-20 mt-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider z-10'>Register Now</a>
+          </div>
         </div>
       </div>
       <div className="fixed xs:bottom-10 bottom-30 right-6 w-full sm:flex hidden justify-end items-center">

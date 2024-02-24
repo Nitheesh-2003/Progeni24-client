@@ -35,6 +35,8 @@ import sql from './sql.png'
 import postgresql from './postgresql.png'
 import c from './c.png'
 import cpp from './cpp.png'
+import progeniqr from './progeni-qr.jpg'
+import confetti from './confetti.gif';
 
 export {
   logo,
@@ -70,5 +72,7 @@ export {
   sql,
   postgresql,
   c,
-  cpp
+  cpp,
+  progeniqr,
+  confetti
 };

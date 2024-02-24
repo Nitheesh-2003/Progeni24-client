@@ -34,9 +34,9 @@ const Footer = () => {
           you out
         </p>
         <div className="md:flex justify-between">
-        <p>Gmail : nitheeshkumar770@gmail.com</p>
-        <p>Mobile No. : +91 7708623734</p>
-        <p>Alternative No. :+91 7708623734</p>
+        <p>Gmail : progeni2024@gmail.com</p>
+        <p>Mobile No. : +91 9751024642</p>
+        <p>Alternative No. :+91 9952634209</p>
         </div>
       </motion.div>
       <div className="m-auto bg-tertiary w-72 px-11 py-2 rounded-3xl flex flex-col gap-1  mt-6">
