@@ -122,7 +122,7 @@ const RegisterPage2 = () => {
       <div className="xl:mt-12 xl:flex-row flex-col flex gap-10 justify-between items-center">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-1 bg-black-100 p-8 rounded-2xl max-w-[500px] "
+          className="flex-1 bg-black-100 p-8 rounded-2xl sm:max-w-[500px] max-w-[300px]"
         >
           <p className={`${styles.sectionSubText}`}>Details for register</p>
           <h3 className={`${styles.sectionHeadText}`}>Info.</h3>
@@ -132,7 +132,7 @@ const RegisterPage2 = () => {
               name="name"
               value={`${user?.firstName} ${user.lastName}`}
               placeholder="What's your name?"
-              className="bg-tertiary py-5 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium cursor-not-allowed"
+              className="bg-tertiary py-5 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none border-none font-medium cursor-not-allowed sm:text-[17px] text-[13px]"
               disabled
             />
             <input
@@ -140,11 +140,11 @@ const RegisterPage2 = () => {
               name="email"
               value={user.email}
               placeholder="Enter your email"
-              className="bg-tertiary py-5 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none cursor-not-allowed border-none font-medium"
+              className="bg-tertiary py-5 px-6 placeholder:text-secondary text-secondary rounded-lg outlined-none cursor-not-allowed border-none font-medium sm:text-[17px] text-[13px]"
               disabled
             />
           </form>
-          <div className="mt-5 text-secondary flex flex-col justify-center gap-3">
+          <div className="mt-5 text-secondary flex flex-col justify-center gap-4 sm:text-[17px] text-[13px]">
             <p>Choose three Tech events</p>
             <table style={{ borderCollapse: "collapse" }}>
               <tbody>
@@ -196,7 +196,7 @@ const RegisterPage2 = () => {
             </table>
           </div>
 
-          <div className="mt-5 text-secondary flex flex-col gap-3">
+          <div className="mt-5 text-secondary flex flex-col gap-3 sm:text-[17px] text-[13px]">
             <p>Choose three Non-Tech events</p>
             <table style={{ borderCollapse: "collapse" }}>
               <tbody>
@@ -250,7 +250,7 @@ const RegisterPage2 = () => {
 
           <Alert
             severity="warning"
-            className="w-full mt-10"
+            className="w-full mt-10 sm:text-[17px] text-[13px]"
             sx={{ bgcolor: "#151030", color: "#fff" }}
           >
             This username will be used for your certificates, so please make
