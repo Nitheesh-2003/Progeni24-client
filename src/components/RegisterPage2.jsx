@@ -22,8 +22,6 @@ const RegisterPage2 = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedTechEvents, setSelectedTechEvents] = useState([]);
   const [selectedNonTechEvents, setSelectedNonTechEvents] = useState([]);
-  const [clickCount, setClickCount] = useState(0);
-
   const handleTechCheckboxChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -65,13 +63,10 @@ const RegisterPage2 = () => {
         nontechevents
       }));
       await dispatch(updateUser(userId, formData));
-      setClickCount((prevCount) => prevCount + 1); // Increment the click count
-      if (clickCount === 1) {
         setCelebrate(true);
         setTimeout(() => {
           setModalOpen(true);
         }, 2000);
-      }
     } catch (error) {
       console.log(error.message);
       toast.error(error.message, {
@@ -84,7 +79,6 @@ const RegisterPage2 = () => {
   const handleCloseModal = () => {
     setModalOpen(false);
     setCelebrate(false);
-    setClickCount(0); // Reset the click count when modal is closed
   };
 
   return (
@@ -274,7 +268,7 @@ const RegisterPage2 = () => {
       </div>
       
         <div className="flex flex-col items-center mt-10">
-          <p>Click here two times only if the payment is done.</p>
+          <p>Click here only if the payment is done.</p>
           <button
             className="button px-8 py-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider mt-10"
             onClick={handleClick}
@@ -282,8 +276,7 @@ const RegisterPage2 = () => {
             Payment Done
           </button>
         </div>
-        {clickCount === 2 && (
-      <PaymentThank open={modalOpen} onClose={handleCloseModal} /> )}
+      <PaymentThank open={modalOpen} onClose={handleCloseModal} /> 
     </>
   );
 };
