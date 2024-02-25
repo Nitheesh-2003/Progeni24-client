@@ -5,7 +5,7 @@ import {
   Tech,
   StarsCanvas,
   About,
-  College
+  College,
 } from "@components";
 import Register from "@pages/Register";
 import Logo from "@components/Logo";
@@ -25,14 +25,16 @@ const Home = () => {
 
   return (
     <>
-      <div className='relative z-0 bg-primary'>
+      <div className="relative z-0 bg-primary">
         <Routes>
           <Route
             path="/"
             element={
               loading ? (
-                <div className="relative z-0 bg-primary w-full h-[100vh] overflow-hidden flex justify-center items-center">
-                  <Logo />
+                <div className="relative z-0 bg-primary h-[100vh] w-full overflow-hidden flex justify-center items-center">
+                  <div className="mr-10">
+                    <Logo />
+                  </div>
                 </div>
               ) : (
                 <>
@@ -50,9 +52,35 @@ const Home = () => {
               )
             }
           />
-          <Route path="about" element={<><College /><Footer /></>} />
-          <Route path="events" element={<div><Events /><Tech /><Footer /></div>} />
-          <Route path="register" element={<div className="relative z-0"><Register /><Footer /><StarsCanvas /></div>} />
+          <Route
+            path="about"
+            element={
+              <>
+                <College />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="events"
+            element={
+              <div>
+                <Events />
+                <Tech />
+                <Footer />
+              </div>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <div className="relative z-0">
+                <Register />
+                <Footer />
+                <StarsCanvas />
+              </div>
+            }
+          />
         </Routes>
       </div>
     </>

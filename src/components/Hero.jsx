@@ -4,6 +4,7 @@ import {styles} from '../styles';
 import Typewriter from 'typewriter-effect';
 import { useSelector } from 'react-redux';
 import Countdown from './Countdown';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const {user}=useSelector((state=>state.authReducer.authData));
@@ -15,11 +16,12 @@ const Hero = () => {
           <div className={`${styles.heroSubText} mb-8`}>DEPARTMENT OF COMPUTER SCIENCE ENGINEERING.</div>
           <h2 className={`${styles.heroSubText} mt-8`}>Progen'i <span className='progeni'>24.0</span></h2>
           <p className='mt-2 max-w-[70%] text-[17px] m-auto text-secondary mb-8'>Pro-generate on March 11, 2024</p>
-          <p className='mt-2 max-w-[70%] sm:text-[17px] text-[15px] m-auto text-secondary'>A National Level Technical Symposium conducted by Society for Advancement of Computer Science and Engineering (SACSE), where innovation takes center stage. Join us as we nurture young talents and encourage innovations through an array of captivating events.</p>
+          <a href='/home/register' className='button px-7 w-fit py-3 m-auto sm:mt-20 mt-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider relative z-10'>Register Now</a>
+          <p className='mt-5 max-w-[70%] sm:text-[17px] text-[15px] m-auto text-secondary'>A National Level Technical Symposium conducted by Society for Advancement of Computer Science and Engineering (SACSE), where innovation takes center stage. Join us as we nurture young talents and encourage innovations through an array of captivating events.</p>
           <div className={`${styles.heroTypeText} type mt-7`}>
           <Typewriter
             options={{
-              strings: [`< const welcome_msg => Loading... />`,`< Welcome ${user.firstName} />`,"< Happy Coding />"],
+              strings: [`< Welcome ${user.firstName} />`,"< Happy Coding />"],
               autoStart: true,
               loop: true,
             }}
@@ -27,9 +29,6 @@ const Hero = () => {
           </div>
           <div>
             <Countdown />
-          </div>
-          <div>
-          <a href='/home/register' className='button px-7 w-fit py-3 m-auto sm:mt-20 mt-5 rounded-xl border-none outline-none text-white text-[18px] font-medium cursor-pointer tracking-wider z-10'>Register Now</a>
           </div>
         </div>
       </div>

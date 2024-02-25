@@ -245,11 +245,7 @@ const technologies = [
   {
     name: "sql",
     icon: sql,
-  },
-  {
-    name: "postgresql",
-    icon: postgresql,
-  },
+  }
 ];
 
 const techeventDetails = [
