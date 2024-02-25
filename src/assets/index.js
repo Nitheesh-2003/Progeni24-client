@@ -37,6 +37,7 @@ import c from './c.png'
 import cpp from './cpp.png'
 import progeniqr from './progeni-qr.jpg'
 import confetti from './confetti.gif';
+import playbook from './Playbook.pdf'
 
 export {
   logo,
@@ -74,5 +75,6 @@ export {
   c,
   cpp,
   progeniqr,
-  confetti
+  confetti,
+  playbook
 };
