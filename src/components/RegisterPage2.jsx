@@ -122,7 +122,7 @@ const RegisterPage2 = () => {
       <div className="xl:mt-12 xl:flex-row flex-col flex gap-10 justify-between items-center">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-1 bg-black-100 p-8 rounded-2xl sm:max-w-[500px] max-w-[300px]"
+          className="flex-1 bg-black-100 p-8 rounded-2xl sm:max-w-[500px] max-w-[400px]"
         >
           <p className={`${styles.sectionSubText}`}>Details for register</p>
           <h3 className={`${styles.sectionHeadText}`}>Info.</h3>
