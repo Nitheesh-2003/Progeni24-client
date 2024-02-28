@@ -23,7 +23,8 @@ const RegisterForm = () => {
         of competitions where talent meets excitement. Registration fee is only{" "}
         <span className="progeni">₹ 200</span>, granting access to all events.
         Once payment is completed, participants can manage their time to
-        participate in all activities
+        participate in all activities.<br></br>
+        On-the-spot registration is also available with a slight increase, priced at <span className="progeni">₹ 250</span>
       </motion.p>
       <div className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
         Additionally, along with this pack

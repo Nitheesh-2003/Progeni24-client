@@ -189,7 +189,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Free Accomodation day before event",
+    title: "Accomodation if necessary, contact us.",
     icon: creator,
   },
 ];
