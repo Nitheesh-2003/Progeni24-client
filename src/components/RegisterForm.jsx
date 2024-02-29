@@ -27,7 +27,7 @@ const RegisterForm = () => {
         On-the-spot registration is also available with a slight increase, priced at <span className="progeni">₹ 250</span>
       </motion.p>
       <div className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        Additionally, along with this pack
+        Along with this pack
         <div className="flex items-start justify-start gap-4 my-3 text-secondary">
           <span className="text-[#790AF9]">
             <SiSitepoint />
@@ -38,7 +38,7 @@ const RegisterForm = () => {
           <span className="text-[#790AF9]">
             <SiSitepoint />
           </span>
-          <span>Free accomodation the day before night.</span>
+          <span>Can participate in three tech and three non-tech events.</span>
         </div>
       </div>
       <div className="flex flex-col justify-center items-center gap-16">
